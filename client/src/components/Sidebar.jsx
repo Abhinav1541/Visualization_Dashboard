@@ -1,7 +1,4 @@
 import React, { useEffect, useState } from "react";
-import {
-  FaBars,
-} from "react-icons/fa";
 
 import { CgPushChevronLeft, CgPushChevronRight } from "react-icons/cg";
 import { SidebarData } from "./SidebarData";
@@ -23,7 +20,9 @@ export default function Sidebar({children}) {
   }, [isSidebarOpen]);
 
   return (<div className="sidebar-container">
-    <div style={{width: isSidebarOpen ? "300px" : "50px"}} className="sidebar">
+    <div style={{width: isSidebarOpen ? "300px" : "50px"}}  className="sidebar">
+      <div style={{width: isSidebarOpen ? "300px" : "50px", visibility: "hidden"}}  className="hidden"></div>
+      <div style={{width: isSidebarOpen ? "300px" : "50px"}} className="sidebar-inner">
       <div style={{padding: isSidebarOpen ? "20px 15px" : "24.75px 15px 24.75px 12px"}} className="sidebar-top">
         <h1 style={{display: isSidebarOpen ? "block" : "none"}} className="logo">Logo</h1>
         <div className="bars">
@@ -34,13 +33,15 @@ export default function Sidebar({children}) {
       </div>
       {
         SidebarData.map((item, index) => 
-          (<NavLink to={item.path} key={index} className="link" activeclassName="active">
+          (<NavLink to={item.path} key={index} className="link">
             <div className="link-icon">{item.icon}</div>
             <div style={{display: isSidebarOpen ? "block" : "none"}} className="link-text">{item.name}</div>
           </NavLink>)
         )
       }
     </div>
+      </div>
+      
     <main>
       {children}
     </main>

@@ -10,6 +10,7 @@ import Relevance from "./Routes/Relevance";
 import Topics from "./Routes/Topics";
 import Year from "./Routes/Year";
 import "./App.css";
+import Country from "./Routes/Country";
 
 const App = () => {
   return (
@@ -22,6 +23,7 @@ const App = () => {
           <Route path="/intensity" element={<Intensity />} />
           <Route path="/likelihood" element={<Likelihood />} />
           <Route path="/region" element={<Region />} />
+          <Route path="/country" element={<Country />} />
           <Route path="/relevance" element={<Relevance />} />
           <Route path="/topic" element={<Topics />} />
           <Route path="/year" element={<Year />} />

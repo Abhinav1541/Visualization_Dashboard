@@ -4,6 +4,12 @@
   text-decoration: none;
 }
 
+html,
+body {
+  width: 100%;
+  height: 100%;
+}
+
 .sidebar-container {
   display: flex;
 }
@@ -13,12 +19,12 @@ main {
   padding: 20px;
 }
 
-.sidebar {
+.sidebar-inner {
+  position: fixed;
   background: #000;
-  color: #fff;
   height: 100vh;
-  width: 280px;
   transition: all 0.5s;
+  color: #fff;
 }
 
 .sidebar-top {
